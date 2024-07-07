@@ -66,7 +66,32 @@ MySnackBar(message,context){
     SnackBar(content: Text(message))
   );
 }
+MyAlertDialog(context){
+  return showDialog(context: context,
+      builder: (BuildContext context){
+    return Expanded(child: AlertDialog(
+      title: Text('Alert'),
+      content: Text('Are you agreed'),
+      actions: [
+        TextButton(onPressed: (){
 
+          Navigator.of(context).pop();
+        },
+            child: Text('Yes'),
+        ),
+        TextButton(onPressed: (){
+          MySnackBar('closed ', context);
+          Navigator.of(context).pop();
+        },
+          child: Text('No'),
+        ),
+      ],
+    ),
+    );
+      }
+
+      );
+}
   @override
   Widget build(BuildContext context) {
     return   Scaffold(
@@ -127,16 +152,22 @@ MySnackBar(message,context){
      },
    ),
 
+
    drawer: Drawer(
      backgroundColor: Colors.cyanAccent,
      child: ListView(
        children: [
          DrawerHeader(
-             padding: EdgeInsets.all(0),
+             padding: EdgeInsets.all(1),
+             
              child: UserAccountsDrawerHeader(
-               decoration: BoxDecoration(color: Colors.green),
+               currentAccountPicture: Image.network('assets/pic/mypic.jpg'),
+               decoration: BoxDecoration( color: Colors.green),
                accountName: Text("Md Naimur Islam Nissan",style: TextStyle(color:Colors.black)),
                accountEmail: Text("mdnaimur122@gmail.com",style: TextStyle(color:Colors.black,)),
+               onDetailsPressed: (){
+                 MySnackBar('you click details', context);
+               },
              )),
          ListTile(
              leading: Icon(Icons.home),
@@ -163,6 +194,8 @@ MySnackBar(message,context){
      ),
    ),
 
+
+     /*
       endDrawer: Drawer(
         backgroundColor: Colors.cyanAccent,
         child: ListView(
@@ -198,6 +231,8 @@ MySnackBar(message,context){
           ],
         ),
       ),
+
+*/
 //Button create in Center body
      /* body: Center(
        /* child: Icon(
@@ -286,6 +321,109 @@ MySnackBar(message,context){
          child: Text('Text Button'),
         )
 
+      ),
+      */
+      
+
+      /*
+      body: Container(
+        height: 150,
+        width: 150,
+        alignment: Alignment.center,
+        margin: EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.cyanAccent,
+          border: Border.all(color: Colors.black,width: 2),
+        ),
+        child: Image.network('assets/pic/mypic.jpg'),
+      ),
+
+       */
+
+
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+        children: [
+
+          Container(
+            height: 150,
+            width: 150,
+            margin: EdgeInsets.all(10),
+            child:GestureDetector(
+              onTap: (){
+              MyAlertDialog(context);
+              },
+              onDoubleTap: (){
+                print('Double tap');
+              },
+              child: Image.network('assets/pic/mypic.jpg'),
+            )
+
+
+          ),
+          Container(
+            height: 150,
+            width: 150,
+            margin: EdgeInsets.all(10),
+            child:GestureDetector(
+              onTap: (){
+                MyAlertDialog(context);
+              },
+              onDoubleTap: (){
+                print('Double tap');
+              },
+              child: Image.network('assets/pic/mobile.jpg'),
+            )
+
+
+          ),
+          Container(
+            height: 150,
+            width: 150,
+            margin: EdgeInsets.all(10),
+            child:GestureDetector(
+              onTap: (){
+                MyAlertDialog(context);
+              },
+              onDoubleTap: (){
+                print('Double tap');
+              },
+              child: Image.network('assets/pic/mypic.jpg'),
+            )
+
+
+          ),
+        ],
+      ),
+
+
+      /*
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+            height: 150,
+            width: 150,
+            margin: EdgeInsets.all(10),
+            child: Image.network('assets/pic/mypic.jpg'),
+
+          ),
+          Container(
+            height: 150,
+            width: 150,
+            margin: EdgeInsets.all(10),
+            child: Image.network('assets/pic/mobile.jpg'),
+
+          ),
+          Container(
+            height: 150,
+            width: 150,
+            margin: EdgeInsets.all(10),
+            child: Image.network('assets/pic/mypic.jpg'),
+
+          ),
+        ],
       ),
       */
 
