@@ -94,6 +94,11 @@ MyAlertDialog(context){
 }
   @override
   Widget build(BuildContext context) {
+  ButtonStyle buttonStyle=ElevatedButton.styleFrom(
+    minimumSize: Size(double.infinity,60),
+    backgroundColor: Colors.green,
+    foregroundColor: Colors.black,
+  );
     return   Scaffold(
       backgroundColor: Colors.blue,
       appBar: AppBar(
@@ -340,8 +345,11 @@ MyAlertDialog(context){
 
        */
 
+/*  //scroll view with column multiple widget
+      body: SingleChildScrollView(
+       // scrollDirection: Axis.horizontal,(row k scroll ar jonno ati use hoy
 
-      body: Row(
+     child: Column (
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
         children: [
@@ -396,7 +404,8 @@ MyAlertDialog(context){
           ),
         ],
       ),
-
+      ),
+*/
 
       /*
       body: Column(
@@ -426,7 +435,38 @@ MyAlertDialog(context){
         ],
       ),
       */
+    // simple form with TextField
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
 
+        children: [
+          Padding(padding: EdgeInsets.all(10),
+          child: TextField(
+            cursorColor: Colors.black,
+
+            decoration: InputDecoration(border: OutlineInputBorder(),labelText: 'First Name'),
+          ),
+          ),
+          Padding(padding: EdgeInsets.all(10),
+          child: TextField(
+            decoration: InputDecoration(border: OutlineInputBorder(),labelText: ('Last Name'),),
+          ),
+          ),
+          Padding(padding: EdgeInsets.all(10),
+          child: TextField(
+            decoration: InputDecoration(border: OutlineInputBorder(),labelText: 'Email',),
+          ),
+          ),
+          Padding(padding: EdgeInsets.all(10),
+          child: ElevatedButton(onPressed:(){
+            MySnackBar('Submitted', context);
+          },
+            child: Text('Submit'),
+            style: buttonStyle,
+          ),)
+        ],
+      ),
     );
   }
 }
