@@ -24,15 +24,13 @@ class Home extends StatelessWidget{
           SnackBar(content: Text(message))
       );
     }
-    ButtonStyle buttonStyle=ElevatedButton.styleFrom(
-        backgroundColor: Colors.green
-    );
+
     return Scaffold(
 
       appBar: AppBar(
         // backgroundColor: Colors.grey,
 
-        title: Text('Greeting App'),
+        title: Text('Text Styling App'),
       ),
       body: Center(
         child: Column(
@@ -40,37 +38,42 @@ class Home extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(padding: EdgeInsets.all(5),
-              child: Text('Hello world!', style: TextStyle(
-                  color: Colors.red,fontWeight: FontWeight.bold,fontSize: 20
+              child: Text('Flutter Text Styling', style: TextStyle(
+                  color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20
               ),
               ),
             ),
             Padding(padding: EdgeInsets.all(5),
-              child: Text('Welcome to Flutter', style: TextStyle(
-                  fontSize: 20
+              child: Text('Experiment with text styles', style: TextStyle(
+                  fontSize: 20,
+                fontStyle: FontStyle.italic
               ),
               ),
             ),
-            Container(
-              width: 150,
-              height: 150,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/pic/mobile.jpg'),
-                    fit: BoxFit.cover
-                ),
+           
 
-              ),
-            ),
-
-            Padding(padding: EdgeInsets.all(10),
-              child:   ElevatedButton(onPressed: (){
-                MySnackBar('Button pressed',context);
+            Padding(padding: EdgeInsets.all(5),
+              child:  TextButton(onPressed: (){
+                MySnackBar('You Click the Button',context);
               },
-                child: Text('press me'),
-                style: buttonStyle,
+                child: Text('Click Me'),
+
 
               ),
+            ),
+            Padding(padding: EdgeInsets.all(5),
+             child: Row(
+               mainAxisAlignment: MainAxisAlignment.center,
+               children: [
+                 Text('Welcome to ',style: TextStyle(
+                   fontSize: 20
+                 ),),
+                 Text('Flutter!',style: TextStyle(
+                   fontSize: 25,
+                   color: Colors.blue
+                 ),)
+               ],
+             ),
             )
 
 
