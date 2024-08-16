@@ -45,7 +45,7 @@ class Home extends StatelessWidget{
             ),
             Padding(padding: EdgeInsets.all(5),
               child: Text('Experiment with text styles', style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 10,
                 fontStyle: FontStyle.italic
               ),
               ),
