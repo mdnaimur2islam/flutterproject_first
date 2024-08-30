@@ -93,12 +93,38 @@ class _mobileScaffoldState extends State<mobileScaffold> {
                     style:TextStyle(
                       fontSize: 20,
 
-                    ),),
-                    ElevatedButton(
-
-                       onPressed: (){} ,
-                        child: Text('Join course')
                     ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 50),
+                    child: Container(
+                      height: 50,
+                      width: 400,
+                      child: ElevatedButton(
+
+                        onPressed: () {
+
+                        },
+                        child: Text(
+                          textAlign: TextAlign.center,
+                         'JOin course',
+                          style: TextStyle(
+                            fontSize: 35,
+                            color: Colors.white,
+                          ),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          alignment: Alignment.center,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(0),
+
+                          ),
+                          backgroundColor: Colors.green,
+                          //padding: EdgeInsets.only(right:100),
+                        ),
+                      ),
+                    ),
+                  ),
 
                 ],
 

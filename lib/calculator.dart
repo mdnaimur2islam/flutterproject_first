@@ -39,7 +39,8 @@ class _CalculatorState extends State<Calculator> {
 style: ElevatedButton.styleFrom(
 
   shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(100)
+    borderRadius: BorderRadius.circular(100),
+
   ),
   backgroundColor: btncolor,
   padding: EdgeInsets.all(10),

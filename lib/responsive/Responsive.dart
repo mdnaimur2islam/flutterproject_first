@@ -2,9 +2,9 @@
 //import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled1/desktopScaffold.dart';
-import 'package:untitled1/mobileScaffold.dart';
-import 'package:untitled1/tabletScaffold.dart';
+import 'package:untitled1/responsive/desktopScaffold.dart';
+import 'package:untitled1/responsive/mobileScaffold.dart';
+import 'package:untitled1/responsive/tabletScaffold.dart';
 
 import 'mobileScaffold.dart';
 //import 'package:flutter_screenutil/flutter_screenutil.dart';
