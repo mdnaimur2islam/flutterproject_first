@@ -68,7 +68,7 @@ style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.all(5),
                     child: Text('0',
                         textAlign: TextAlign.left,
-                        style: TextStyle(color: Colors.white, fontSize: 100)),
+                        style: TextStyle(color: Colors.white, fontSize: 75)),
                   ),
                 ],
               ),
@@ -120,9 +120,13 @@ style: ElevatedButton.styleFrom(
                   ElevatedButton(onPressed: (){
         
                   },
-                      child: Text('0'),
+                      child: Text('0',style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 35
+                      ),),
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.fromLTRB(34, 25, 128, 25),
+                      padding: EdgeInsets.fromLTRB(75,12,75,12),
                       backgroundColor: Colors.grey,
         
                     ),
