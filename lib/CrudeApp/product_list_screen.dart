@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled1/CrudeApp/UpdateProductScreen.dart';
 import 'package:untitled1/CrudeApp/add_new_product.dart';
 
 class product_list_screen extends StatefulWidget {
@@ -58,7 +59,11 @@ class ProductItem extends StatelessWidget {
           ButtonBar(
             children: [
               TextButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                    return const UpdateProductScreen();
+                  }),);
+                },
                 label: const Text('edit'),
                 icon: const Icon(Icons.edit),
               ),

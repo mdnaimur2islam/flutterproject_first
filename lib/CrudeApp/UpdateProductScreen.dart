@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class addNewProduct extends StatefulWidget {
-  const addNewProduct({super.key});
+class UpdateProductScreen extends StatefulWidget {
+  const UpdateProductScreen({super.key});
 
   @override
-  State<addNewProduct> createState() => _addNewProductState();
+  State<UpdateProductScreen> createState() => _UpdateProductScreenState();
 }
 
-class _addNewProductState extends State<addNewProduct> {
+class _UpdateProductScreenState extends State<UpdateProductScreen> {
   TextEditingController _productNameController=TextEditingController();
   TextEditingController _unitPrizeController=TextEditingController();
   TextEditingController _totalPrizeController=TextEditingController();
@@ -31,8 +31,8 @@ class _addNewProductState extends State<addNewProduct> {
               TextField(
                 controller: _productNameController,
                 decoration: InputDecoration(
-                  hintText: ('Nmae'),
-                  labelText: 'Product name'
+                    hintText: ('Nmae'),
+                    labelText: 'Product name'
                 ),
               ),
               TextField(
@@ -72,7 +72,7 @@ class _addNewProductState extends State<addNewProduct> {
               ),
               const SizedBox(height: 10,),
               ElevatedButton(onPressed: _onTapAddProductButton,
-                  child: Text('Add'),
+                child: Text('Add'),
                 style: ElevatedButton.styleFrom(
                   fixedSize: const Size.fromWidth(double.maxFinite),
                 ),
@@ -88,11 +88,11 @@ class _addNewProductState extends State<addNewProduct> {
   void _onTapAddProductButton(){}
   @override
   void dispose() {
-  _productNameController.dispose();
-  _quantityController.dispose();
-  _totalPrizeController.dispose();
-  _imageController.dispose();
-  _productCodeController.dispose();
-  _unitPrizeController.dispose();
+    _productNameController.dispose();
+    _quantityController.dispose();
+    _totalPrizeController.dispose();
+    _imageController.dispose();
+    _productCodeController.dispose();
+    _unitPrizeController.dispose();
   }
 }
