@@ -1,6 +1,8 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:http/http.dart';
 
 class UpdateProductScreen extends StatefulWidget {
   const UpdateProductScreen({super.key});
@@ -20,7 +22,7 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: Text('Add new product'),
+        title: Text('Update product'),
 
       ),
       body: Padding(
@@ -86,6 +88,21 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
     );
   }
   void _onTapAddProductButton(){}
+   fetchUserDate(String productCode) async {
+
+
+    Uri uri = Uri.parse('http://164.68.107.70:6060/api/v1/UpdateProduct/6395ce12187245c05d68da82');
+    http.Response response = await http.get(uri);
+    print(response);
+    print(response.statusCode);
+    print(response.body);
+    if (response.statusCode == 200) {
+
+
+    }
+
+  }
+
   @override
   void dispose() {
     _productNameController.dispose();
@@ -94,5 +111,6 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
     _imageController.dispose();
     _productCodeController.dispose();
     _unitPrizeController.dispose();
+    super.dispose();
   }
 }
