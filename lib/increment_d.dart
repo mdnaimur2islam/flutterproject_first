@@ -136,6 +136,7 @@ class _MyBagScreenState extends State<MyBagScreen> {
             Row(
 
                 children: [
+
               Text('Total amount: '),
              Text('\$${calculateTotal()}',
                textAlign: TextAlign.end,

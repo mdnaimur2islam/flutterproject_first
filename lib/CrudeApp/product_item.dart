@@ -1,18 +1,22 @@
+import 'dart:nativewrappers/_internal/vm/lib/core_patch.dart';
+import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled1/CrudeApp/UpdateProductScreen.dart';
 import 'package:untitled1/CrudeApp/productmodels.dart';
-
+import 'package:http/http.dart'  as http;
 class ProductItem extends StatelessWidget {
+
   const ProductItem({
-    super.key,required this.product,
+    super.key, required this.product,
   });
+
   final productmodels product;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title:  Text('${product.ProductName}'),
+      title: Text('${product.ProductName}'),
       subtitle: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -37,7 +41,9 @@ class ProductItem extends StatelessWidget {
                 icon: const Icon(Icons.edit),
               ),
               TextButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  deleteProduct;
+                },
                 label: const Text(
                   'Delete',
                   style: TextStyle(color: Colors.red),
@@ -53,4 +59,11 @@ class ProductItem extends StatelessWidget {
       ),
     );
   }
-}
+
+   Future<void> deleteProduct() async {
+    Uri uri=Uri.parse('');
+   }
+ }
+
+
+
